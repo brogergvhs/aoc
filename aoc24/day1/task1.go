@@ -7,6 +7,8 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+
+	"github.com/brogergvhs/aoc24/utils"
 )
 
 func readInput(filename string) ([]int, []int, error) {
@@ -57,17 +59,9 @@ func calculateTotalDistance(lL, rL []int) int {
 
 	totalDistance := 0
 	for i := 0; i < len(lL); i++ {
-		diff := abs(lL[i] - rL[i])
+		diff := utils.Abs(lL[i] - rL[i])
 		totalDistance += diff
 	}
 
 	return totalDistance
 }
-
-func abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-

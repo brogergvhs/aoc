@@ -7,7 +7,7 @@ import (
 func main() {
 	inputFile := "input.txt"
 
-  lL1, rL1, err := readInput(inputFile)
+	lL1, rL1, err := readInput(inputFile)
 	if err != nil {
 		fmt.Printf("Error reading input for Task 1: %v\n", err)
 		return
@@ -28,6 +28,4 @@ func main() {
 	}
 	similarityScore := calculateSimilarityScore(lL2, rL2)
 	fmt.Printf("Task 2 - Similarity Score: %d\n", similarityScore)
-
 }
-
