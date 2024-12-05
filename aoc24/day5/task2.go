@@ -15,6 +15,12 @@ func Task2(updates [][]int, rules map[int][]int) int {
 	return sumOfMiddlePages
 }
 
+// Reordering
+// - build a directed graph where X -> Y represents X | Y
+// - Kahn's algorithm for topological sort:
+//   - add nodes with in-degree 0 to queue
+//   - remove node from queue, add neighbors to queue as in-degree becomes 0
+//   - append processed node to sorted list in order
 func reorderPages(update []int, rules map[int][]int) []int {
 	graph := make(map[int][]int)
 	inDegree := make(map[int]int)
@@ -37,7 +43,7 @@ func reorderPages(update []int, rules map[int][]int) []int {
 		}
 	}
 
-	// topological sort w/ Kahn's algo
+	// t.s. w/ Kahn's algo
 	var sorted []int
 	var queue []int
 
